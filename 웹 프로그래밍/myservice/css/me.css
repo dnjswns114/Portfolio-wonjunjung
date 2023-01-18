@@ -1,0 +1,86 @@
+#container{width:80%;margin:0 auto}
+#center{float:left;width:100%;border-left:1px solid #ccc;border-right:1px solid #ccc}
+#myWallPhoto{float:left;width:100%;height:400px}
+#myProfilePhoto{width:200px;margin:0 auto}
+#myProfilePhoto img{float:left;width:100%;margin-top:-40%}
+#name{float:left;text-align:center;color:#000;font-size:2em;padding:1rem 0}
+.myButtonBox{float:right;border:1px solid #ccc;padding:0.5rem;margin:20px 5px 5px 0}
+.myButtonBox .photoSelectorBtn, #myProfilePhotoUploadBtn, #myCoverPhotoUploadBtn{background:none;border:none;text-align:center;cursor:pointer}
+.myButtonBox a{color:#555;}
+.photoBox{clear:both;float:right;margin-top:3px;border:1px solid #64cbf9}
+.myButtonBox .photoSelectorBtn{width:70%;height:24px}
+#myProfilePhotoUploadBtn, #myCoverPhotoUploadBtn{float:right;height:24px;padding:0 2px 0 2px}
+
+#container{clear:both;width:80%;margin:30px auto 0}
+#writing{clear:both;float:left;width:100%;border-top:1px solid #ccc;border-bottom:1px solid #ccc; margin-bottom:10%}
+#writing .me img{float:left;width:30px;margin:1rem}
+
+#writing .me p{float:left;font-size:1rem;margin:1.2rem 0 0 0}
+#writing textarea{float:left;width:98%;margin-left:1%;height:100px;border-radius:0}
+#writing #inputBox{clear:both;float:right;width:40px;height:1.9rem;border:1px solid #ccc;margin:0.5rem 1%; color:#fff;background:#fff}
+#writing #inputBox input{float:left;width:100%;border:none;color:#000;background:none;margin-top:8px}
+.reading{clear:both;float:left;width:100%;border-top:1px solid #ccc;border-bottom:1px solid #ccc}
+.reading .writerArea img{float:left;width:30px;margin:1rem}
+.reading .writingInfo{float:left}
+.reading .writingInfo p{clear:both;float:left;font-size:1rem;margin-top:12px}
+.reading .writingDate{clear:both;float:left;margin:0.3rem 0 0 0;font-size:0.5rem;color:#bbb}
+.content{float:left;width:96%;min-height:48px;margin-left:2%;border:1px solid #ccc}
+.likeArea{clear:both;float:left;width:100%;margin-top:10px;border-top:1px solid #ccc;border-bottom:1px solid #ccc}
+.likeArea div{padding:5px 0;text-align:center}
+.likeNum{clear:both;float:left;width:100%;border-bottom:1px solid #ccc}
+.likeBtn{float:left;width:50%;border-right:1px solid #ccc}
+.contentsID{float:left;width:49%}
+.myCommentArea{float:left;width:100%}
+.myCommentArea img{float:left;width:25px;margin:2px}
+.commentBox{clear:both;float:left;width:98%;padding:1%;font-size:1.2em}
+.myCommentArea .inputBox{float:left;width:100%;margin-top:16px;border-top:1px solid #ccc}
+.inputComment{float:left;width:70%;height:26px;margin-left:10px;border:none;background:#fff}
+.myCommentArea .regCommentBox{float:right;width:9%;height:29px;border-left:1px solid #ccc;background:#fff}
+.regComment{float:left;width:100%;border:none;color:#000;background:none;margin-top:8px}
+.commentPoster, .writtenComment{float:left;font-size:1.2em}
+
+.commentBox .commentPoster{color:#64cbf9;margin-right:10px}
+.regCommentBox{float:right;width:9%;height:29px;border-left:1px solid #ccc;background:#fff}
+.regCommentBtn{float:left;width:100%;border:none;color:#000;background:none;margin-top:8px;cursor:pointer}
+.inputBox{float:left;width:100%;margin-top:16px;border-top:1px solid #ccc;}
+.inputBox img{float:left;width:25px;margin:2px 2px 2px 11px}
+#noContents{clear:both;float:left;width:100%;text-align:center;padding:10px 0 10px 0;display:none}
+
+/* 다음 코드는 현재 꾸미려는 부분외에는 우선 안보이게 처리하기 위함*/
+#myContent{_display:none}
+/* mobile base*/
+@media screen and (min-width:0px) and (max-width:1199px){
+ #name{width:100%}
+}
+@media screen and (min-width:320px) and (max-width:374px){
+ #myProfilePhoto{width:80px;max-height:100px}
+ #myWallPhoto{height:150px}
+}
+@media screen and (min-width:375px) and (max-width:399px){
+ #myProfilePhoto{width:80px;max-height:100px}
+ #myWallPhoto{height:170px}
+}
+@media screen and (min-width:400px) and (max-width:500px){
+ #myProfilePhoto{width:100px;max-height:120px}
+ #myWallPhoto{height:200px}
+}
+@media screen and (min-width:501px) and (max-width:700px){
+ #myProfilePhoto{width:150px;max-height:170px}
+ #myWallPhoto{height:300px}
+}
+@media screen and (min-width:427px) and (max-width:729px){
+ .myButtonBox{clear:both}
+}
+@media screen and (min-width:500px) {
+ .likeNum{clear:none;width:33%;cursor:pointer;border:none}
+ .likeBtn{width:33%;cursor:pointer;border-left:1px solid #ccc;border-right:1px solid #ccc}
+ .contentsID{width:33%;cursor:pointer}
+}
+
+/* pc */
+@media screen and (min-width:1200px) {
+ #myProfilePhoto{float:left;width:200px;margin-left:50px}
+ #myProfilePhoto img{float:left;width:100%;margin-top:-40%;border:5px dotted #64cbf9}
+ #name{float:left;color:#000;font-size:2em;margin-left:20px;margin-top:3px}
+ #writing{margin-top:20px}
+}

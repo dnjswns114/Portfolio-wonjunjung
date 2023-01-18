@@ -1,0 +1,58 @@
+#signup{display:none}
+#introSite{_display:none}
+
+/* mobile base css source */
+@media screen and (min-width:0px) and (max-width:1199px){
+body{background:#fff}
+#introSite{clear:both;float:left;width:100%}
+#signupCenter{width:80%;}
+#siteComment{margin:10% auto;width:65%;color:#64cbf9}
+#signUpBtn{margin:10% auto 15%;width:100px;height:30px;background:#64cbf9;text-align:center;padding-top:1em;border-radius:1rem}
+#signUpBtn p{font-size:1rem;color:#fff}
+#goToLoginBtn{clear:both;width:30%;height:30px;padding:0.4rem;margin:0 auto 20px;background:#64cbf9;cursor:pointer;text-align:center;border-radius:10px}
+#goToLoginBtn p{font-size:1rem;color:#fff;position:relative;top:5px}
+}
+
+/* desktop css source */
+@media screen and (min-width:1200px) {
+#loginForm{display:block}
+#container{float:left;width:100%;min-height:100%;background:url('/myservice/images/index/bgImage.jpg');background-size:cover}
+#siteComment{margin:2% auto 0;width:210px;background:rgba(255,255,255,0.4)}
+#introSite{display:block}
+#signUpBtn, #goToLoginBtn{display:none}
+#signup{display:block;margin-top:1%;margin-bottom:5%}
+#signupCenter{width:50%}
+#signUpForm{background:rgba(255,255,255,0.8)}
+.inputBox{height:40px}
+.row input{height:40px}
+.submitBox{width:10%;padding:0.2rem}
+}
+/* end of desktop css source */
+
+/* common */
+#siteComment{border:3px solid #64cbf9;padding:1rem;font-size:2rem;color:#64cbf9}
+
+#signupCenter{margin:0 auto}
+#signUpForm{float:left;width:98%;margin:40px 0 40px 0;padding-top:1rem;border:1px solid #ccc;border-radius:10px}
+
+.row{clear:both;float:left;width:100%;margin-bottom:1.5em}
+.row label{float:left;width:20%;padding-left:5%;font-size:1.3rem}
+.inputBox{float:left;width:90%;background:#fff;margin-left:1rem;border:1px solid #ccc}
+.row input{float:left;width:98%;font-size:1.5rem;margin-left:2%;background:#fff;border:none}
+.row .selectBox{float:left;width:21%;border:1px solid #ccc;background:#fff;margin-top:3px}
+.row .selectBox select{float:left;background:#fff url('/myservice/images/index/selectTagBg.png');border:none;-webkit-appearance:none;-moz-appearance:none;background-size:10px;background-repeat:no-repeat;background-position: 90% 5px;width:90%;margin-left:5px;font-size:1rem}
+
+#birthYear{font-size:1rem}
+.selectBoxMargin{margin-left:2%;margin-right:2%}
+.genderRow input{width:15px;margin-left:10%;position:relative;top:4px}
+
+#genderLabel{clear:both;width:80%;margin:0 auto}
+#gMM{border-left:none}
+.genderRow label{float:left;width:49%;border:1px solid #ccc;text-align:center;padding-left:0}
+.genderRow input{clear:both;float:none;width:0px;visibility: hidden}
+
+#valueError{float:left;width:100%;text-align:center;color:red;font-size:2em}
+#siteComment{border:3px solid #64cbf9;padding:1rem;font-size:2rem;color:#64cbf9;}
+
+.submitBox{clear:both;float:left;width:25%;padding:0.4rem;background:#64cbf9;margin-left:5%;border-radius:10px}
+#signUpSubmit{float:left;width:100%;background:none;color:#fff;text-align:center;font-size:1rem}
