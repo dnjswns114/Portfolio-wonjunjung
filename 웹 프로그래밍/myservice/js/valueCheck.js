@@ -8,7 +8,6 @@ $(document).ready(function(){
   //로그인 버튼 클릭 이벤트
   loginSubmit.click(function(){
     //이메일 유효성 검사식입니다. 이 식은 정규식이라고합니다.
-    //PHP 에서 학습하므로 그냥 따라합니다.
     var regEmailPattern = /^[a-zA-Z_\-0-9]+@[a-z]+.[a-z]+$/;
     //아래 if문의 조건문은 위의 정규식을 이메일 주소가 따르는지 아닌지를 판별합니다.
     //앞에 !가 있는 것에 주의해주세요.
