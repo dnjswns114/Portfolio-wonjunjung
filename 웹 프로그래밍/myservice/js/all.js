@@ -13,7 +13,7 @@ $(document).ready(function(){
             meContent.focus();
             return false;
         }
-        //백엔드 프로젝트에서 게시물 등록 기능 구현
+        
         $.ajax({
             type: 'post', //post 전송 방식으로 전달
             dataType: 'json', //json 언어로 전달
