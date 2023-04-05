@@ -136,7 +136,7 @@ $(document).ready(function(){
 
 
 
-                  //댓글 영역 나중에 프로그래밍 필요
+                  
                   inputHtml += "<div class='myCommentArea myCommentArea"+ content[contents]['contentsID'] +"'>";
 
                   //댓글 정보 변수에 대입
@@ -189,7 +189,6 @@ $(document).ready(function(){
  })
 
   //댓글 게시 버튼 클릭 이벤트
-  //댓글 게시 버튼 클릭 이벤트 지금까지와는 다른 모습의 클릭이벤트 입니다.
   $(document).on('click', '.regCommentBtn', function(){
     //클릭한 버튼에 적용된 id값을 가져옴
     var catchID = $(this).attr('id');
