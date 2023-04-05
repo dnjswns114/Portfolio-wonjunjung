@@ -10,7 +10,6 @@ $(document).ready(function(){
     //이메일 유효성 검사식입니다. 이 식은 정규식이라고합니다.
     var regEmailPattern = /^[a-zA-Z_\-0-9]+@[a-z]+.[a-z]+$/;
     //아래 if문의 조건문은 위의 정규식을 이메일 주소가 따르는지 아닌지를 판별합니다.
-    //앞에 !가 있는 것에 주의해주세요.
     if(!regEmailPattern.test(loginEmail.val())){
       alert('입력한 이메일 주소가 올바르지 않습니다. ');
       return false;
@@ -51,7 +50,6 @@ $(document).ready(function(){
       return false;
     }
     //값이 공백이 아니면 해당 값이 유효한 값인지 확인
-    //아래의 식은 PHP 학습 시 학습하므로 그냥 따라해 주세요.
     //입력한 값이 한글이거나 알파벳이라는 것을 확인하는 식입니다.
     var regNamePattern = /^[가-힣a-zA-Z]+$/;
     if(regNamePattern.test(userName.val())){
@@ -74,7 +72,6 @@ $(document).ready(function(){
       return false;
     }
     //데이터베이스에 같은 이메일 주소를 사용하는 사용자가 있는지 확인
-    //이 기능은 PHP 학습 시 AJAX 학습 후 구현.
 
     emailCheck = false;
 
