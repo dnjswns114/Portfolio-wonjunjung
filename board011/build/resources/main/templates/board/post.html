@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>게시판 - 글쓰기</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css"/>
+</head>
+<body>
+<header th:insert="common/header.html"></header>
+<div class="container">
+    <form action="/post" method="post" enctype="multipart/form-data" onsubmit="return validateFormAndImage()">
+        <div class="form-group row">
+            <label for="inputTitle" class="col-sm-2 col-form-label"><strong>제목</strong></label>
+            <div class="col-sm-10">
+                <input type="text" name="title" class="form-control" id="inputTitle"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputAuthor" class="col-sm-2 col-form-label"><strong>작성자</strong></label>
+            <div class="col-sm-10">
+                <input type="text" name="author" class="form-control" id="inputAuthor"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputContent" class="col-sm-2 col-form-label"><strong>내용</strong></label>
+            <div class="col-sm-10">
+                <textarea type="text" name="content" class="form-control" id="inputContent"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto mr-auto"></div>
+            <div class="col-auto">
+                <input class="btn btn-primary" type="submit" role="button" value="글쓰기"/>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Combined input for both image and file -->
+            <input type="file" accept="image/*" name="uploadFile" onchange="handleFileSelect(event);"/>
+            <!-- Hidden input to store the selected image data -->
+            <input type="hidden" name="selectedImage" id="selectedImage"/>
+            <!-- Container to display the thumbnail -->
+        </div>
+    </form>
+    <div id="image_container"></div>
+    <button class="btn btn-primary" onclick="deleteImage()">파일 삭제</button>
+</div>
+
+
+<script>
+
+    function deleteImage() {
+        // Remove the displayed image from the container
+        var imageContainer = document.getElementById('image_container');
+        imageContainer.innerHTML = "";
+
+        // Clear the value of the hidden input to remove the filename from the form submission
+        document.getElementById('selectedImage').value = "";
+
+        document.querySelector('input[type="file"]').value = "";
+    }
+
+
+    //파일 선택시 이미지 썸네일 보여주기
+    function handleFileSelect(event) {
+        // Display the thumbnail for the selected image
+        var reader = new FileReader();
+        reader.onload = function (event) {
+            var img = document.createElement("img");
+            img.setAttribute("src", event.target.result);
+            document.querySelector("div#image_container").innerHTML = "";
+            document.querySelector("div#image_container").appendChild(img);
+
+            // Store the selected image data in the hidden input
+            document.getElementById('selectedImage').value = event.target.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+
+    // 제목이나 파일이 입력되지 않았을 경우 제목과 파일을 입력하라는 알람을 띄우고 입력했다면 트루를 반환하여 포스팅 완료
+    function validateFormAndImage() {
+        const title = document.getElementById("inputTitle").value.trim();
+        const selectedImage = document.getElementById('selectedImage').value;
+
+        // Check if the title is empty
+        if (title === "") {
+            alert("제목을 입력해주세요");
+            return false;
+        }
+
+        // Check if a file is selected
+        if (!selectedImage) {
+            alert("파일을 넣어주세요");
+            return false;
+        }
+
+        return true; // 모두 충족한다면 트루 리턴
+    }
+
+
+</script>
+<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>게시판 - 목록</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css"/>
+</head>
+<body>
+<header th:insert="common/header.html"></header>
+<div class="container">
+    <table class="table">
+        <thead class="thead-light">
+        <tr class="text-center">
+            <th scope="col">NO</th>
+            <th scope="col">제목</th>
+            <th scope="col">작성자</th>
+            <th scope="col">작성일</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="text-center" th:each="post : ${postList}">
+            <th scope="row">
+                <span th:text="${post.boardNumber}"></span>
+            </th>
+            <td>
+                <a th:href="@{'/post/' + ${post.id}}">
+                    <span th:text="${post.title}"></span>
+                </a>
+            </td>
+            <td>
+                <span th:text="${post.author}"></span>
+            </td>
+            <td>
+                <span th:text="${#temporals.format(post.createdDate, 'yyyy-MM-dd HH:mm')}"></span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <th:block th:each="page : ${#numbers.sequence(startPage, endPage)}">
+        <a th:if="${page != nowPage}" th:href="@{/(page = ${page - 1})}" th:text="${page}"></a>
+        <a th:if="${page == nowPage}" th:text="${page}" style="color : red"></a>
+    </th:block>
+
+<!--    <div class="row">-->
+<!--        <div class="col-auto mr-auto"></div>-->
+<!--        <div class="col-auto">-->
+<!--            <th:block th:each="page : ${#numbers.sequence(startPage, endPage)}">-->
+<!--                <a th:if="${page != nowPage}" th:href="@{/board/search(keyword=${#request.getParameter('keyword')}, page=${page - 1})}" th:text="${page}"></a>-->
+<!--                <a th:if="${page == nowPage}" th:text="${page}" style="color: red;"></a>-->
+<!--            </th:block>-->
+<!--        </div>-->
+<!--    </div>-->
+
+</div>
+<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
