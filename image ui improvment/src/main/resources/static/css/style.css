@@ -1,0 +1,31 @@
+/* Style the "글쓰기" button */
+.btn-primary {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    top: 50px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination .page-item {
+    margin: 0 5px;
+}
+
+.pagination .page-item.disabled span {
+    pointer-events: none;
+}
+.btn-group{
+    position: relative;
+    top: 50px;
+}
+
+/* custom.css */
+.custom-margin-top {
+    margin-top: 80px; /* Adjust this value as needed */
+}
+
